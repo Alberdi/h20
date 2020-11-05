@@ -1,0 +1,19 @@
+{{#children}}
+	<div class="col-sm">
+    	<ul class="list-group">
+        	<li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+            	<div>
+                    <span class="fas fa-user"></span>
+                    {{name}}
+                </div>
+            	<div>
+                	<span class="badge badge-info badge-pill">{{quality}}</span>
+                	<span class="badge badge-warning badge-pill">{{trick}}</span>
+            	</div>
+        	</li>
+            {{#canVisit}}
+                <button type="button" data-toggle="modal" data-target="#modalSendChild" data-child_name="{{name}}" class="list-group-item list-group-item-secondary list-group-item-action text-center child_btn">Enviar a por caramelos</button>
+            {{/canVisit}}
+    	</ul>
+	</div>
+{{/children}}

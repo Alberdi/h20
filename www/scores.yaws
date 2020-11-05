@@ -1,0 +1,6 @@
+<erl>
+out(_) ->
+  Scores = h20:list_scores(),
+  [{status, 200},
+   {content, "application/json", Scores}].
+</erl>

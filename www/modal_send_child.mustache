@@ -1,0 +1,27 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header bg-secondary">
+            <h5 class="modal-title" id="modalLabelSendChild">Enviar niño a una casa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form id="formSendChild">
+            <div class="modal-body bg-light text-secondary">
+                ¿A qué casa quieres enviar a <span id="spanChildName" class="text-info"></span>?
+                {{#houses}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sendChildRadios" id="radioHouse_{{name}}" value="{{name}}" {{#child}}disabled{{/child}}>
+                        <label class="form-check-label" for="radioHouse_{{name}}">
+                            {{name}}
+                        </label>
+                    </div>
+                {{/houses}}
+            </div>
+            <div class="modal-footer bg-secondary">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                <button id="btnSendChild" type="submit" class="btn btn-dark" disabled>Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>

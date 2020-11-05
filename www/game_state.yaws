@@ -1,0 +1,6 @@
+<erl>
+out(#arg{headers = #headers{authorization = {Name, _, _}}}) ->
+GameState = h20:game_state(list_to_atom(Name)),
+[{status, 200},
+ {content, "application/json", GameState}].
+</erl>

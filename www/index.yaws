@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font_awesome/all.min.css"/>
+    <link rel="stylesheet" href="css/h20.css"/>
+
+    <title>h20</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div id="divRules1">
+        <div class="row mt-2">
+            <div class="offset-md-3 col-md-6">
+                <h1 class="mt-5 text-center">¡Hola, <span class="text-capitalize"><erl>
+                   out(#arg{headers = #headers{authorization = {Name, _, _}}}) ->
+                     {ehtml, Name}.
+                </erl></span>!</h1>
+                <p class="mt-5 text-justify">Necesitamos tu ayuda para que la noche de
+                    Halloween sea una de las más divertidas del año.</p>
+                <p class="mt-5 text-justify">Los requisitos para esta tarea son:</p>
+                <ul>
+                    <li>Un ordenador (en un móvil es prácticamente injugable).</li>
+                    <li>20 minutos de tu tiempo.</li>
+                    <li>Ganas de jugar.</li>
+                </ul>
+                <p class="mt-5 text-justify">¿Te animas?</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-md-3 col-md-6 text-center">
+                <button id="btnAnotherTime" class="btn btn-lg btn-secondary mr-5">Mejor en otro momento</button>
+                <button id="btnRules1Next" class="btn btn-lg btn-light mr-5">Explícame las reglas</button>
+                <a href="game.html" class="btn btn-lg btn-light">¡A jugar!</a>
+            </div>
+        </div>
+    </div>
+    <div id="divRules2" class="d-none">
+        <div class="row mt-2">
+            <div class="offset-md-3 col-md-6">
+                <p class="mt-5 text-justify">Tendrás que disfrazar a niños para enviarlos a pedir
+                    caramelos a casas. ¿Y cómo hago esto? Te estarás preguntando.</p>
+                <p class="mt-5 text-justify">Dispondrás de 3 rondas, cada una de las cuales tiene 2 fases:</p>
+                <ol>
+                    <li>En primer lugar comprarás accesorios para los niños.</li>
+                    <li>En segundo lugar enviarás a los niños a las casas para que consigan el mayor número de
+                        caramelos posible.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-md-3 col-md-6 text-center">
+                <button id="btnRules2Next" class="btn btn-lg btn-light">Seguir leyendo</button>
+            </div>
+        </div>
+    </div>
+    <div id="divRules3" class="d-none">
+        <div class="row mt-2">
+            <div class="offset-md-3 col-md-6">
+                <p class="mt-5 text-justify">Para disfrazar a los niños tendras que ir de compras a tiendas:</p>
+                <div class="col-sm">
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-dark" disabled>
+                            <span class="fas fa-shopping-basket"></span> Nombre_tienda
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-secondary list-group-item-action d-flex justify-content-between align-items-center no-gutters accessory_btn">
+                            Nombre_accesorio
+                            <div>
+                                <span class="badge badge-info badge-pill">7</span>
+                                <span class="badge badge-warning badge-pill">3</span>
+                                <span class="badge badge-danger badge-pill">12</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <p class="mt-5 text-justify">Donde:</p>
+                <ul>
+                    <li>Nombre_tienda es el nombre de la tienda.</li>
+                    <li>Nombre_accesorio es el nombre del accesorio.</li>
+                    <li class="text-info">El círculo azul indica el nivel de calidad que tiene el accesorio (en este
+                        caso, 7).</li>
+                    <li class="text-warning">El círculo amarillo indica el nivel de susto que tiene el accesorio (en
+                        este caso, 3).</li>
+                    <li class="text-danger">El círculo rojo indica el número de caramelos que cuesta comprar el
+                        accesorio (en este caso, 12).</li>
+                    <li>Para comprar el accesorio, debes pulsar sobre él.</li>
+                </ul>
+                <p class="mt-5 text-justify">Deberás tener en cuenta lo siguiente:</p>
+                <ul>
+                    <li>En cada ronda habrá 3 tiendas en las que comprar.</li>
+                    <li>En cada momento de la compra estará abierta una única tienda.</li>
+                    <li>Sólo puedes saber qué accesorios hay a la venta en la tienda en que estés comprando.</li>
+                    <li>Cada tienda tendrá 5 accesorios a la venta, y podrás comprar entre 0 y 5.</li>
+                    <li>Cuando termines de comprar en una tienda, puedes abrir la siguiente; pero recuerda: esto
+                        hace que se cierre la tienda actual para siempre.</li>
+                    <li>Para que puedas comprar accesorios te daremos 100 caramelos al inicio.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-md-3 col-md-6 text-center">
+                <button id="btnRules3Prev" class="btn btn-lg btn-light mr-5">Atrás</button>
+                <button id="btnRules3Next" class="btn btn-lg btn-light">Seguir leyendo</button>
+            </div>
+        </div>
+    </div>
+    <div id="divRules4" class="d-none">
+        <div class="row mt-2">
+            <div class="offset-md-3 col-md-6">
+                <p class="mt-5 text-justify">Una vez disfrazados, verás así a los niños:</p>
+                <div class="col-sm">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="fas fa-user"></span> Nombre_niño
+                            </div>
+                            <div>
+                                <span class="badge badge-info badge-pill">14</span>
+                                <span class="badge badge-warning badge-pill">20</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mt-5 text-justify">Donde:</p>
+                <ul>
+                    <li>Nombre_niño es el nombre del niño.</li>
+                    <li class="text-primary">El círculo azul indica el nivel de calidad que tiene el disfraz del niño
+                        (en este caso, 14).</li>
+                    <li class="text-warning">El círculo amarillo indica el nivel de susto que tiene el disfraz del niño
+                        (en este caso, 20).</li>
+                    <li>Los valores anteriores se calculan sumando los valores de calidad y susto, respectivamente, de todos los accesorios que le hayas dado al niño.</li>
+                </ul>
+                <p class="mt-5 text-justify">¡Y ya podrás enviarlos a dar sustos!</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-md-3 col-md-6 text-center">
+                <button id="btnRules4Prev" class="btn btn-lg btn-light mr-5">Atrás</button>
+                <button id="btnRules4Next" class="btn btn-lg btn-light">Seguir leyendo</button>
+            </div>
+        </div>
+    </div>
+    <div id="divRules5" class="d-none">
+        <div class="row mt-2">
+            <div class="offset-md-3 col-md-6">
+                <p class="mt-5 text-justify">Las casas tendrán este aspecto:</p>
+                <div class="col-sm">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="fas fa-home"></span> Nombre_casa
+                            </div>
+                            <div>
+                                <span class="badge badge-info badge-pill">13</span>
+                                <span class="badge badge-warning badge-pill">18</span>
+                                <span class="badge badge-success badge-pill">38</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mt-5 text-justify">Donde:</p>
+                <ul>
+                    <li>Nombre_casa es el nombre de la casa.</li>
+                    <li class="text-info">El círculo azul indica el nivel de calidad que debe tener el disfraz de
+                        un niño para conseguir caramelos en esa casa (en este caso, 13).</li>
+                    <li class="text-warning">El círculo amarillo indica el nivel de susto que debe tener el disfraz
+                        de un niño para conseguir caramelos en esa casa (en este caso, 18).</li>
+                    <li class="text-success">El círculo verde indica el número de caramelos que te darán en la casa si
+                        el niño cumple los requisitos (en este caso, 38).</li>
+                    <li>Si el niño no cumple ambos requisitos, no obtendrá ningún caramelo en esa casa.</li>
+                </ul>
+                <p class="mt-5 text-justify">Debes tener en cuenta que cada niño sólo podrá ir a una casa, y que a
+                    cada casa sólo podrá ir un niño.</p>
+                <p class="mt-5 text-justify">Para enviar a cada niño a una casa, aparecerá un botón debajo del nombre del niño. Una vez enviado a la casa, se mostrará debajo del nombre de ésta: en rojo si no ha conseguido caramelos, y en verde si los ha conseguido.</p>                    
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-md-3 col-md-6 text-center">
+                <button id="btnRules5Prev" class="btn btn-lg btn-light mr-5">Atrás</button>
+                <button id="btnRules5Next" class="btn btn-lg btn-light">Seguir leyendo</button>
+            </div>
+        </div>
+    </div>
+    <div id="divRules6" class="d-none">
+        <div class="row mt-2">
+            <div class="offset-md-3 col-md-6">
+                <p class="mt-5 text-justify">Para saber el estado del juego y pasar de fase/ronda, dispondrás de un listado lateral:</p>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                        Nº ronda
+                        <span class="badge badge-primary badge-pill">2</span>
+                    </li>
+                    <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                        Fase
+                        <span class="badge badge-primary badge-pill">Comprando</span>
+                    </li>
+                    <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                        Nº caramelos
+                        <span class="badge badge-success badge-pill">143</span>
+                    </li>
+                    <button type="button" class="list-group-item list-group-item-secondary list-group-item-action text-center">Siguiente fase</button>
+                </ul>
+                <p class="mt-5 text-justify">Y así, ronda tras ronda, deberás conseguir el máximo número de caramelos
+                    posible.</p>
+                <p class="mt-5 text-justify">Por supuesto podrás jugar tantas veces
+                    como quieras y batir tu récord (o el de otros).</p>
+                <p class="mt-5 text-justify">¿Empezamos?</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="offset-md-3 col-md-6 text-center">
+                <button id="btnRules6Prev" class="btn btn-lg btn-light mr-5">Atrás</button>
+                <a href="game.html" class="btn btn-lg btn-light">¡A jugar!</a>
+            </div>
+        </div>
+    </div>
+    <div id="divAnotherTime" class="row mt-2 d-none">
+        <div class="offset-md-3 col-md-6">
+            <h1 class="mt-5 text-center">¡Hasta pronto, <span class="text-capitalize"><erl>
+              out(#arg{headers = #headers{authorization = {Name, _, _}}}) ->
+                {ehtml, Name}.
+            </erl></span>!</h1>
+            <p class="mt-5 text-justify">Anota en tu agenda que tienes pendiente el juego/invitación h20. Queremos
+                contar contigo esa noche :)</p>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $("[id^='btnRules'][id$='Next']").click(function() {
+            var num = parseInt(this.id.replace('btnRules', '').replace('Next', ''), 10);
+            var next = num + 1;
+            $("#divRules" + num).addClass("d-none");
+            $("#divRules" + next).removeClass("d-none");
+        });
+
+        $("[id^='btnRules'][id$='Prev']").click(function() {
+            var num = parseInt(this.id.replace('btnRules', '').replace('Prev', ''), 10);
+            var prev = num - 1;
+            $("#divRules" + num).addClass("d-none");
+            $("#divRules" + prev).removeClass("d-none");
+        });
+
+        $("#btnAnotherTime").click(function() {
+            $("#divRules1").addClass("d-none");
+            $("#divAnotherTime").removeClass("d-none");
+        });
+    });
+</script>
+</body>
+</html>

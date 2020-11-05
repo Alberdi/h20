@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/h20.css"/>
+
+    <title>h20</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div id="divScores" class="offset-md-3 col-md-6"></div>
+    </div>
+    <div class="row mt-5">
+        <div class="offset-md-3 col-md-6 text-center">
+            <a href="index.yaws" class="btn btn-lg btn-light">Volver a jugar</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/mustache.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $.get("scores.yaws", function(scores) {
+            fetch('scores.mustache')
+                .then((response) => response.text())
+                .then((template) => {
+                    var scoresHtml = Mustache.render(template, {
+                        "scores": scores,
+                        "timeStr": function() {
+                            var date = new Date(this.time / 1000000);
+                            var dayStr = (date.getDate()).toString();
+                            if (dayStr.length < 2) {
+                                dayStr = "0" + dayStr;
+                            }
+                            var monthStr = (date.getMonth() + 1).toString();
+                            if (monthStr.length < 2) {
+                                monthStr = "0" + monthStr;
+                            }
+                            var yearStr = (date.getFullYear()).toString();
+                            var hoursStr = (date.getHours());
+                            if (hoursStr.length < 2) {
+                                hoursStr = "0" + hoursStr;
+                            }
+                            var minutesStr = (date.getMinutes()).toString();
+                            if (minutesStr.length < 2) {
+                                minutesStr = "0" + minutesStr;
+                            }
+                            var secondsStr = (date.getSeconds()).toString();
+                            if (secondsStr.length < 2) {
+                                secondsStr = "0" + secondsStr;
+                            }
+                            return dayStr + "-" + monthStr + "-" + yearStr + " " + hoursStr + ":" + minutesStr + ":" + secondsStr;
+                        },
+                        "total": function() {
+                            return scores.reduce(
+                                function(accumulator, score) {
+                                    return accumulator + parseInt(score.score, 10);
+                                }, 0);
+                        }
+                    });
+                    $("#divScores").html(scoresHtml);
+                });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{{#houses}}
+    <div class="col-sm">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="fas fa-home"></span> {{name}}
+                </div>
+                <div>
+                    <span class="badge badge-info badge-pill">{{req_quality}}</span>
+                    <span class="badge badge-warning badge-pill">{{req_trick}}</span>
+                    <span class="badge badge-success badge-pill">{{candies}}</span>
+                </div>
+            </li>
+            {{#child}}
+                <li class="list-group-item list-group-item-{{#win}}success{{/win}}{{^win}}danger{{/win}} d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="fas fa-user"></span> {{name}}
+                    </div>
+                    <div>
+                        <span class="badge badge-info badge-pill">{{quality}}</span>
+                        <span class="badge badge-warning badge-pill">{{trick}}</span>
+                    </div>
+                </li>
+            {{/child}}
+        </ul>
+    </div>
+{{/houses}}

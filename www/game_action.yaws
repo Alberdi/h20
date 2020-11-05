@@ -1,0 +1,11 @@
+<erl>
+out(#arg{clidata = Body, headers = #headers{authorization = {Name, _, _}}}) ->
+  AtomName = list_to_atom(Name),
+  case h20:game_action(AtomName, Body) of
+  	ok ->
+  	  GameState = h20:game_state(AtomName),
+  	  [{status, 200}, {content, "application/json", GameState}];
+  	finished ->
+  	  [{status, 200}]
+  	end.
+</erl>

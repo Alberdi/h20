@@ -1,0 +1,25 @@
+{{#game}}
+    <ul class="list-group mt-2">
+        <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+            Nº ronda
+            <span class="badge badge-primary badge-pill">{{round}}</span>
+        </li>
+        <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+            Fase
+            <span class="badge badge-primary badge-pill">{{stage}}</span>
+        </li>
+        <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+            Nº caramelos
+            <span class="badge badge-success badge-pill">{{candies}}</span>
+        </li>
+        {{#nextStage}}
+            <button type="button" data-toggle="modal" data-target="#modalNextStep" class="list-group-item list-group-item-secondary list-group-item-action text-center">Siguiente fase</button>
+        {{/nextStage}}
+        {{#nextRound}}
+            <button id="btnNextRound" class="list-group-item list-group-item-secondary list-group-item-action text-center">Siguiente ronda</button>
+        {{/nextRound}}
+        {{#finished}}
+            <button id="btnFinish" class="list-group-item list-group-item-secondary list-group-item-action text-center">Finalizar</button>
+        {{/finished}}
+    </ul>
+{{/game}}

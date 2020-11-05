@@ -1,0 +1,20 @@
+<h1 class="mt-5 text-center">Puntuaciones</h1>
+<table class="mt-5 table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#scores}}
+            <tr>
+                <th scope="row">{{score}}</th>
+                <td>{{name}}</td>
+                <td>{{timeStr}}</td>
+            </tr>
+        {{/scores}}
+    </tbody>
+</table>
+<p class="mt-5 text-justify">¡Entre todos hemos conseguido <span class="text-success font-weight-bolder">{{total}}</span> caramelos!</p>

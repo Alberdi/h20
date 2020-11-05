@@ -1,0 +1,27 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header bg-secondary">
+            <h5 class="modal-title" id="modalLabelBuyAccessory">Comprar accesorio</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form id="formBuyAccessory">
+            <div class="modal-body bg-light text-secondary">
+                ¿A qué niño le vas a poner el accesorio <span id="spanAccessoryName" class="text-info"></span>?
+                {{#children}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="buyAccessoryRadios" id="radioChild_{{name}}" value="{{name}}">
+                        <label class="form-check-label" for="radioChild_{{name}}">
+                            {{name}}
+                        </label>
+                    </div>
+                {{/children}}
+            </div>
+            <div class="modal-footer bg-secondary">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                <button id="btnBuyAccessory" type="submit" class="btn btn-dark" disabled>Comprar</button>
+            </div>
+        </form>
+    </div>
+</div>
